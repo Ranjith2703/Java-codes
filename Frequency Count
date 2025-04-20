@@ -1,0 +1,12 @@
+Input: arr[] = [10, 5, 20, 5, 10, 5]
+Output: 2 3 1
+Explanation: The freq are as follows: 10:2, 5:3, 20:1, so we print the freq in the order of appearance of the elements. We print freq of any element only once.
+
+public static ArrayList<Integer> frequencyCount(int arr[]) {
+    // Your code here
+    Map<Integer,Integer> a=new LinkedHashMap<>();
+    for(int i:arr){
+        a.put(i,a.getOrDefault(i,0)+1);
+    }
+    return new ArrayList<>(a.values());
+}

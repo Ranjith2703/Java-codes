@@ -1,0 +1,28 @@
+
+Given an array of names arr[] of candidates in an election. A candidate name in array represents a vote casted to the candidate. You need to find the candidate with maximum votes recieved in the election. It may happen that two or more candidates may have same votes, in that case you need to return the name of the candidate which comes first lexicographically in dictionary.
+
+Examples:
+
+Input: arr[] = ["Turin", "Nick", "Turin", "Nick"]
+Output: Nick
+Explanation: Both have the same 2 number of votes but Nick comes first lexicographically.
+Input: arr[] = ["John", "Shushma", "Rajnath"]
+Output: John 
+Explanation: All the three have same number of votes of 1. Lexicographically John comes first.
+
+
+class Solution:
+  def TieBreak(self, arr):
+     f={}
+     for i in arr:
+         if i in f:
+             f[i]+=1
+         else:
+             f[i]=1
+     m=max(f.values())
+     m1=None
+     for j,k in f.items():
+         if k==m:
+             if m1 is None or j<m1:
+                 m1=j
+     return m1

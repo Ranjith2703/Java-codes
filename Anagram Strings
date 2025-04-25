@@ -1,0 +1,18 @@
+class Solution {
+    static int areAnagram(String S1, String S2) {
+        // code here
+        int[] a=new int[26];
+        for(int i=0;i<S1.length();i++){
+            char c=S1.charAt(i);
+            a[c-'a']++;
+        }
+        for(int i=0;i<S2.length();i++){
+            char v=S2.charAt(i);
+            a[v-'a']--;
+        }
+        for(int i=0;i<26;i++){
+            if(a[i]>0) return 0;
+        }
+        return 1;
+    }
+}

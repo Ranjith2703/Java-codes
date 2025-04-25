@@ -1,0 +1,12 @@
+public static String Sorted_Characters(String s) {
+    // Your code here
+    TreeSet<Character>f=new TreeSet<>();
+    for(char c:s.toCharArray()){
+        f.add(c);
+    }
+    String r="";
+    for(char g:f){
+        r+=g;
+    }
+    return r;
+}

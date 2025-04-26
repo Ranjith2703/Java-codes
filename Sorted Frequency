@@ -1,0 +1,12 @@
+class Solution {
+    public static void freqSorted(int arr[]) {
+        // Your Code Here
+        Map<Integer,Integer> a=new TreeMap<>();
+        for(int i:arr){
+            a.put(i,a.getOrDefault(i,0)+1);
+        }
+        for(int k:a.keySet()){
+            System.out.println(k+" "+a.get(k));
+        }
+    }
+}

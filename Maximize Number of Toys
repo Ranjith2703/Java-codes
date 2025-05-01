@@ -1,0 +1,28 @@
+You are given an integer array arr[] that denotes the prices of inividual toys. You are also given an amount k that is the total money you have. You need to maximize the number of toys you can have with the k amount.
+
+Examples:
+
+Input: arr[] = [5, 4, 3, 2, 1], k = 8
+Output: 3
+Explanation: With k=8 amount, you can purchase toys with prices 3 2 1 so total of 3 toys.
+Input: arr[] = [1, 2, 3, 4, 5], k = 15
+Output: 5
+Explanation: With k=15 amount, you can purchase all the toys.
+
+
+
+class Solution {
+    public static int max_toys(int arr[], int k) {
+        // Your code here
+        int c=0;
+        int s=0;
+        Arrays.sort(arr);
+        for(int i:arr){
+            s+=i;
+            if(s<=k){
+                c++;}
+        }
+        return c;
+        
+    }
+}

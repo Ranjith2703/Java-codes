@@ -1,0 +1,21 @@
+You are given an integer array arr[] of items. The elements of arr represent value of items. You are also given an integer k. Now, a thief wants to commit a burglary but he can only pick k items from the given items. Help him so that he gets the maximum total value out of this theft.
+Input: arr[] = [3, 7, 2, 5, 12, 30], k = 3
+Output: 49
+Explanation: The thief should pick the bolded items:
+3 7 2 5 12 30. So, the sum of these is 49.
+
+class Solution:
+	def electionWinner(self, arr):
+		f={}
+		for i in arr:
+		    if i in f:
+		        f[i]+=1
+		    else:
+		        f[i]=1
+		m=0
+		b=""
+		for k,v in f.items():
+		   if v>m:
+		       m=v
+		       b=k
+		return b
